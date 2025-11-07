@@ -78,7 +78,7 @@
 							 widget: "markdown",
 						 },
 			    ],
-			    pattern: /^(\s*)> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n^\1>.*$/gm,
+			    pattern: /^> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\n^> (.*)$/gm,
 			    fromBlock: function(match) {
 					console.log(match);
 			        return {
