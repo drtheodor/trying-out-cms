@@ -80,6 +80,7 @@
 			    ],
 			    pattern: /^(\s*)> \[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n^\1>.*$/,
 			    fromBlock: function(match) {
+					console.log(match);
 			        return {
 			            type: match[2],
 						message: match[3]
