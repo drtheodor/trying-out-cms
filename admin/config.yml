@@ -31,8 +31,8 @@ collections:
     label_singular: 'Post'
     folder: 'src/data/blog'
     create: true
-    path: '{{year}}/{{month}}/{{day}}/{{slug}}'
-    extension: mdx
+    path: '{{fields.category}}/{{slug}}'
+    extension: md
     i18n: true
     editor:
       preview: false
