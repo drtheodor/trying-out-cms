@@ -91,6 +91,9 @@ collections:
         widget: 'markdown'
         label: 'Body'
         i18n: true
+      - name: 'e'
+        widget: 'categories'
+        label: 'E'
 
   - name: categories
     label: Categories
