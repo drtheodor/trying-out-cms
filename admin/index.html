@@ -46,14 +46,15 @@
 			.secondary-sidebar {
 				min-width: 340px;
 			}
-
-			:root {
-				--sui-base-hue: 35;
-			}
 		</style>
 	</head>
 	<body>
 		<script is:inline src="https://unpkg.com/@sveltia/cms@0.116.0/dist/sveltia-cms.js"></script>
+		<style>
+			:root {
+				--sui-base-hue: 35;
+			}
+		</style>
 		<script>
 			CMS.registerEditorComponent({
     id: "gist",
