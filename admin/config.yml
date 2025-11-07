@@ -34,6 +34,8 @@ collections:
     path: '{{year}}/{{month}}/{{day}}/{{slug}}'
     extension: mdx
     i18n: true
+    editor:
+      preview: false
     fields:
       - name: 'title'
         widget: 'string'
