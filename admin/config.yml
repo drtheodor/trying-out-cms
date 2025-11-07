@@ -94,6 +94,7 @@ collections:
       - name: 'e'
         widget: 'categories'
         label: 'E'
+        separator: __
 
   - name: categories
     label: Categories
