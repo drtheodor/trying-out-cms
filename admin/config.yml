@@ -93,10 +93,6 @@ collections:
         widget: 'markdown'
         label: 'Body'
         i18n: true
-      - name: 'e'
-        widget: 'categories'
-        label: 'E'
-        separator: __
 
   - name: categories
     label: Categories
