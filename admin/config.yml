@@ -1,5 +1,3 @@
-local_backend: true
-
 logo_url: /favicon.png
 
 slug:
@@ -73,7 +71,7 @@ collections:
     # 👇 Creates a standard .md file inside the chosen folder
     path: "{{section}}/{{slug}}"
     media_folder: ".././"
-    public_folder: ""
+    public_folder: "./"
     
     summary: "📄 {{section}}/{{title}}"
     #view_filters:
@@ -86,7 +84,6 @@ collections:
         - name: section
           label: Categories
           field: section
-          #pattern: '\d{4}'
       default: section
     
     fields:
