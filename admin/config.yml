@@ -23,6 +23,7 @@ i18n:
   structure: 'multiple_folders'
   locales: ['en', 'es', 'ar', 'ja', 'zh-cn']
   default_locale: 'en'
+  initial_locales: [en]
 
 collections:
   - name: 'entries'
