@@ -76,7 +76,7 @@ collections:
         name: "title"
         widget: "string"
         
-      - name: 'category'
+      - name: 'section'
         widget: 'relation'
         collection: 'wiki_categories'
         value_field: '{{slug}}'
@@ -84,6 +84,7 @@ collections:
         display_fields: ['title']
         multiple: false
         i18n: 'duplicate'
+        dropdown_threshold: 0
         
       - label: "Body"
         name: "body"
