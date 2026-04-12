@@ -81,7 +81,7 @@ collections:
         collection: 'wiki_categories'
         value_field: '{{fields.section}}'
         search_fields: ['title', 'fields.section']
-        display_fields: ['title', 'fields.section']
+        display_fields: ['title']
         multiple: false
         i18n: 'duplicate'
         dropdown_threshold: 0
