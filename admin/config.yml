@@ -72,7 +72,7 @@ collections:
     create: true
     # 👇 Creates a standard .md file inside the chosen folder
     path: "{{section}}/{{slug}}"
-    media_folder: "../"
+    media_folder: ".././"
     public_folder: ""
     
     summary: "📄 {{section}}/{{title}}"
