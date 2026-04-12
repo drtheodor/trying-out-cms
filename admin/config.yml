@@ -30,7 +30,7 @@ collections:
     media_folder: ""
     public_folder: ""
     
-    summary: "📂 {{section}}/ (Category Landing)"
+    summary: "📂 {{section}} ({{title}}/{{title}})"
     
     fields:
       - label: "Title"
