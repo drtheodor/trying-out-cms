@@ -72,9 +72,12 @@ collections:
         field: "section"
 
     view_groups:
-      - label: Categories
-        field: section
-        #pattern: '\d{4}'
+      groups:
+        - name: section
+          label: Categories
+          field: section
+          #pattern: '\d{4}'
+      default: section
     
     fields:
       - label: "Title"
