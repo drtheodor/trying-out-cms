@@ -31,7 +31,7 @@ collections:
   # -------------------------------------------------
   - name: wiki_categories
     label: "📁 Category Pages"
-    label_singular: "Category Index"
+    label_singular: "📁 Category Index"
     folder: wiki
     create: true
     # 👇 Forces filename to be "index.md"
@@ -67,7 +67,7 @@ collections:
   # -------------------------------------------------
   - name: wiki_pages
     label: "📄 Wiki Pages"
-    label_singular: "Wiki Page"
+    label_singular: "📄 Wiki Page"
     folder: wiki
     create: true
     # 👇 Creates a standard .md file inside the chosen folder
