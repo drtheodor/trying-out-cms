@@ -79,7 +79,7 @@ collections:
       - name: 'section'
         widget: 'relation'
         collection: 'wiki_categories'
-        value_field: '{{slug}}'
+        value_field: '{{section}}'
         search_fields: ['title']
         display_fields: ['title']
         multiple: false
