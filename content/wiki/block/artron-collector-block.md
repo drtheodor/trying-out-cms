@@ -4,4 +4,4 @@ description: some desc
 section: block
 ---
 
-aaaaa![](/blocks/new-entry/bet%20on%20greenster.jpg)
+aaaaa![](block/bet%20on%20greenster-1.jpg)
