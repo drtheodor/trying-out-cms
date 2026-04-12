@@ -62,11 +62,11 @@ collections:
     folder: wiki
     create: true
     # 👇 Creates a standard .md file inside the chosen folder
-    path: "{{section}}/{{slug}}"
-    media_folder: "{{section}}"
+    path: "{{section}}"
+    media_folder: ""
     public_folder: ""
     
-    summary: "📄 {{slug}}"
+    summary: "📄 {{section}}/{{slug}}"
     view_filters:
       - label: "Section"
         field: "section"
