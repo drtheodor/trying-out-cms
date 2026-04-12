@@ -1,90 +1,91 @@
-local_backend: true
-
-logo_url: /favicon.png
-
+# ================================
+# Backend Configuration
+# ================================
 backend:
-  name: github
-  repo: drtheodor/trying-out-cms
+  name: github # or git-gateway, proxy, etc.
+  repo: your-username/your-repo
   branch: main
-  base_url: https://sveltia-cms-auth.drtheo.workers.dev/
 
-publish_mode: editorial_workflow
+# ================================
+# Global Media Settings (Overridden per collection)
+# ================================
+media_folder: "static/global_media"
+public_folder: "/global_media"
 
-slug:
-  encoding: 'ascii'
-  clean_accents: true
-  sanitize_replacement: '-'
-
-
-media_folder: "src/assets/images" # Location where files will be stored in the repo
-public_folder: "src/assets/images" # The src attribute for uploaded media
-
-i18n:
-  structure: 'multiple_folders'
-  locales: ['en', 'es', 'ar', 'ja', 'zh-cn']
-  default_locale: 'en'
-  initial_locales: [en]
-
+# ================================
+# Collections
+# ================================
 collections:
-  - name: 'entries'
-    label: 'Wiki Entries'
-    label_singular: 'Entry'
-    folder: 'content/wiki'
+  # -------------------------------------------------
+  # 1. CATEGORY MAIN PAGES (creates index.md)
+  # -------------------------------------------------
+  - name: wiki_categories
+    label: "📁 Category Pages"
+    label_singular: "Category Index"
+    folder: wiki
     create: true
-    path: '{{fields.category}}/{{slug}}'
-    extension: md
-    i18n: true
-    media_folder: ''
-    public_folder: ''
-    editor:
-      preview: true
+    # 👇 Forces filename to be "index.md"
+    path: "{{section}}/index"
+    media_folder: ""
+    public_folder: ""
+    
+    summary: "📂 {{section}}/ (Category Landing)"
+    
     fields:
-      - name: 'title'
-        widget: 'string'
-        label: 'Title'
-        i18n: true
-      - name: 'description'
-        widget: 'string'
-        label: 'Description'
-        i18n: true
-      - name: 'lastModified'
-        widget: 'datetime'
-        label: 'Last Modified'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Section (Folder)"
+        name: "section"
+        widget: "string"
+        hint: "Enter folder name (e.g., getting-started, tutorials, api). This creates or selects the folder."
+        pattern: ['^[a-z0-9-]+$', "Use lowercase letters, numbers, and hyphens only."]
+        
+      - label: "Description"
+        name: "description"
+        widget: "text"
         required: false
-        default: "{{now}}"
-        i18n: 'duplicate'
-      - name: 'category'
-        widget: 'relation'
-        collection: 'categories'
-        value_field: '{{locale}}/{{slug}}'
-        search_fields: ['title']
-        display_fields: ['title']
-        multiple: false
-        i18n: 'duplicate'
-      - name: 'body'
-        widget: 'markdown'
-        label: 'Body'
-        i18n: true
+        
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        hint: "This page will be the index of the category folder."
 
-  - name: categories
-    label: Categories
-    label_singular: Category
-    folder: src/data/categories
-    slug: '{{title}}'
+  # -------------------------------------------------
+  # 2. REGULAR WIKI PAGES (creates slug.md)
+  # -------------------------------------------------
+  - name: wiki_pages
+    label: "📄 Wiki Pages"
+    label_singular: "Wiki Page"
+    folder: wiki
     create: true
-    i18n: true
+    # 👇 Creates a standard .md file inside the chosen folder
+    path: "{{section}}/{{slug}}"
+    media_folder: ""
+    public_folder: ""
+    
+    summary: "📄 {{section}}/{{slug}}"
+    view_filters:
+      - label: "Section"
+        field: "section"
+    
     fields:
-      - name: title
-        widget: string
-        label: Title
-        i18n: true
-      - name: order
-        widget: number
-        label: Order
-        required: false
-        value_type: int
-        min: -1000
-        max: 1000
-        step: 1
-        default: 0
-        i18n: 'duplicate'
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        
+      - label: "Section (Folder)"
+        name: "section"
+        widget: "select"
+        # Pre-define common sections or leave as string for free input
+        options:
+          - { label: "Getting Started", value: "getting-started" }
+          - { label: "Tutorials", value: "tutorials" }
+          - { label: "API Reference", value: "api" }
+          - { label: "FAQs", value: "faqs" }
+        hint: "Select an existing folder or type a new one."
+        
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
