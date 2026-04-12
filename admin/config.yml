@@ -60,11 +60,6 @@ collections:
         display_fields: ['title']
         multiple: false
         i18n: 'duplicate'
-      - name: 'draft'
-        widget: 'boolean'
-        label: 'Draft'
-        default: true
-        i18n: 'duplicate'
       - name: 'body'
         widget: 'markdown'
         label: 'Body'
@@ -92,8 +87,3 @@ collections:
         step: 1
         default: 0
         i18n: 'duplicate'
-
-
-        widget: 'markdown'
-        label: 'Bio'
-        i18n: true
