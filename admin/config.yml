@@ -76,16 +76,14 @@ collections:
         name: "title"
         widget: "string"
         
-      - label: "Section (Folder)"
-        name: "section"
-        widget: "select"
-        # Pre-define common sections or leave as string for free input
-        options:
-          - { label: "Getting Started", value: "getting-started" }
-          - { label: "Tutorials", value: "tutorials" }
-          - { label: "API Reference", value: "api" }
-          - { label: "FAQs", value: "faqs" }
-        hint: "Select an existing folder or type a new one."
+      - name: 'category'
+        widget: 'relation'
+        collection: 'categories'
+        value_field: '{{locale}}/{{slug}}'
+        search_fields: ['title']
+        display_fields: ['title']
+        multiple: false
+        i18n: 'duplicate'
         
       - label: "Body"
         name: "body"
