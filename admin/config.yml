@@ -66,7 +66,7 @@ collections:
     media_folder: "{{section}}"
     public_folder: ""
     
-    summary: "📄 {{section}}/{{slug}}"
+    summary: "📄 {{slug}}"
     view_filters:
       - label: "Section"
         field: "section"
