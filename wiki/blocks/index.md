@@ -1,6 +1,6 @@
 ---
 title: Blocks
-section: blocks
+section: blocks/index
 description: ''
 ---
 
