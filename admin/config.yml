@@ -34,8 +34,8 @@ collections:
     create: true
     # 👇 Forces filename to be "index.md"
     path: "{{section}}/index"
-    media_folder: "../"
-    public_folder: ""
+    media_folder: ".././"
+    public_folder: "/{{section}}"
     
     summary: "📂 {{section}} ({{title}}/{{title}})"
     
