@@ -1,6 +1,7 @@
 ---
 title: newest entry
+description: ''
 section: blocks
 ---
 
-![](gatekeeping.jpg)
+![](./gatekeeping-1.jpg)
