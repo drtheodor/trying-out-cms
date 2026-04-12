@@ -1,3 +1,12 @@
+local_backend: true
+
+logo_url: /favicon.png
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+  sanitize_replacement: '-'
+
 # ================================
 # Backend Configuration
 # ================================
@@ -10,8 +19,8 @@ backend:
 # ================================
 # Global Media Settings (Overridden per collection)
 # ================================
-media_folder: "static/global_media"
-public_folder: "/global_media"
+media_folder: "public/images"
+public_folder: "/images"
 
 # ================================
 # Collections
@@ -27,7 +36,7 @@ collections:
     create: true
     # 👇 Forces filename to be "index.md"
     path: "{{section}}/index"
-    media_folder: ""
+    media_folder: "../"
     public_folder: ""
     
     summary: "📂 {{section}} ({{title}}/{{title}})"
@@ -67,10 +76,10 @@ collections:
     public_folder: ""
     
     summary: "📄 {{section}}/{{title}}"
-    view_filters:
-      - label: "Section"
-        field: "section"
-        pattern: '^[a-z0-9-]+$'
+    #view_filters:
+    #  - label: "Section"
+    #    field: "section"
+    #    pattern: '^[a-z0-9-]+$'
 
     view_groups:
       groups:
@@ -84,6 +93,11 @@ collections:
       - label: "Title"
         name: "title"
         widget: "string"
+      
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
         
       - name: 'section'
         widget: 'relation'
