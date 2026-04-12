@@ -2,9 +2,10 @@
 # Backend Configuration
 # ================================
 backend:
-  name: github # or git-gateway, proxy, etc.
-  repo: your-username/your-repo
+  name: github
+  repo: drtheodor/trying-out-cms
   branch: main
+  base_url: https://sveltia-cms-auth.drtheo.workers.dev/
 
 # ================================
 # Global Media Settings (Overridden per collection)
