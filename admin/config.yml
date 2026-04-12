@@ -78,8 +78,8 @@ collections:
         
       - name: 'category'
         widget: 'relation'
-        collection: 'categories'
-        value_field: '{{locale}}/{{slug}}'
+        collection: 'wiki_categories'
+        value_field: '{{slug}}'
         search_fields: ['title']
         display_fields: ['title']
         multiple: false
