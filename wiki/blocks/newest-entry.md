@@ -4,4 +4,4 @@ description: ''
 section: blocks
 ---
 
-![](./gatekeeping-1.jpg)
+![](blocks/gatekeeping-2.jpg)
